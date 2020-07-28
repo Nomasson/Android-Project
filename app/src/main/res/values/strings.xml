@@ -1,0 +1,42 @@
+<resources>
+    <string name="app_name">finalProject</string>
+    <string name="delete">Delete</string>
+    <string name="search">Search now</string>
+    <string name="search_hint">Enter here StackOverflow search term</string>
+    <string name="items">The search results</string>
+    <string name="histories">The history search results</string>
+    <string name="welcome">Welcome to the StackOverflow search app!</string>
+    <string name="about">About us</string>
+    <string name="noam">Noam Ossia</string>
+    <string name="dor">Dor Mesilati</string>
+    <string name="barak">Barak Merdler</string>
+    <string name="barakq">c, js, html, css, react, python, Linux, aws, bash script</string>
+    <string name="noamq">Python, nodeJS, SQL, MongoDB, html</string>
+    <string name="tech">Technologies:</string>
+    <string name="lnkd">LinkedIn:</string>
+    <string name="barakl">https://www.linkedin.com/in/barak-merdler-762989168/</string>
+    <string name="noaml">https://www.linkedin.com/in/noam-ossia-699454155</string>
+    <string name="dorl">https://www.linkedin.com/in/dor-mesilati-a51b69168/</string>
+    <string name="dorq">Java, TensorFlow, html, PHP</string>
+    <string name="searchID">Search ID:</string>
+    <string name="searchTerm">Search term:</string>
+    <string name="puppy">Thank you for visiting the app Scroll down for a puppy</string>
+    <string name="aboutusopen">This project was created by us as part of an Android elective course, some details about us:</string>
+    <string name="appexplain">Enter a search keyword, the app will list results from StackOverflow</string>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</resources>

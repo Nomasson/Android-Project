@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">פרוייקט סיום</string>
+    <string name="delete">מחק</string>
+    <string name="search">חפש עכשיו</string>
+    <string name="search_hint">הכנס כאן את ערך החיפוש</string>
+    <string name="items">תוצאות החיפוש</string>
+    <string name="histories">היסטוריית החיפושים</string>
+    <string name="welcome">ברוכים הבאים לאפילקציית החיפוש ב-StrackOverflow</string>
+    <string name="about">מידע על המפתחים</string>
+    <string name="noam">נעם אוסיה</string>
+    <string name="dor">דור מסילתי</string>
+    <string name="barak">ברק מרדלר</string>
+    <string name="noamq">Python, nodeJS, SQL, MongoDB, html</string>
+    <string name="barakq">c, js, html, css, react, python, Linux, aws, bash script</string>
+    <string name="tech">טכנולוגיות:</string>
+    <string name="lnkd">לינקדין:</string>
+    <string name="barakl">https://www.linkedin.com/in/barak-merdler-762989168/</string>
+    <string name="noaml">https://www.linkedin.com/in/noam-ossia-699454155</string>
+    <string name="dorl">https://www.linkedin.com/in/dor-mesilati-a51b69168/</string>
+    <string name="dorq">Java, TensorFlow, html, PHP</string>
+    <string name="searchID">קוד החיפוש:</string>
+    <string name="searchTerm">מילת החיפוש:</string>
+    <string name="puppy">תודה שהשתמשתם באפליקציה גללו למטה בשביל כלב</string>
+    <string name="aboutusopen">הפרוייקט הזה נוצר במסגרת קורס בחירה בפיתוח באנדרואיד כמה פרטים עלינו:</string>
+    <string name="appexplain">הזינו ערך לחיפוש באתר סטאק אוברפלו והאפליקציה תציג רשימת תוצאות</string>
+
+
+
+
+
+
+
+
+
+</resources>
