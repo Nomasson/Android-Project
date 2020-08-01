@@ -33,23 +33,29 @@ public class MainActivity extends AppCompatActivity implements LocationListener 
     SQLiteDatabase dbRead;
     SQLiteDatabase dbWrite;
     MediaPlayer player;
+    final private int REQUEST_CODE_ASK_PERMISSIONS = 123;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        if (Build.VERSION.SDK_INT >= 23) {
+            if (ActivityCompat.checkSelfPermission(this, android.Manifest.permission.ACCESS_FINE_LOCATION) !=
+                    PackageManager.PERMISSION_GRANTED) {
+                requestPermissions(new String[]{
+                                android.Manifest.permission.ACCESS_FINE_LOCATION},
+                        REQUEST_CODE_ASK_PERMISSIONS);
+                return;
+            }
+        }
+
         SharedPreferences sharedPreferences = getSharedPreferences(sharedFile, 0);
         myDbHelper = new MyDatabaseContract.MyDatabaseHelper(this);
         dbWrite = myDbHelper.getWritableDatabase();
         dbRead = myDbHelper.getReadableDatabase();
         searchTerm = findViewById(R.id.searchTerm);
         locationManager = (LocationManager) getSystemService(LOCATION_SERVICE);
-        if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
-
-            Toast.makeText(this, "Please check your location permissions", Toast.LENGTH_SHORT).show();
-            return;
-        }
         locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 3 * 1000, 10, this);
 
         if (searchTerm != null) {
@@ -68,6 +74,25 @@ public class MainActivity extends AppCompatActivity implements LocationListener 
 
     }
 
+    @Override
+    public void onRequestPermissionsResult(int requestCode, String[] permissions, int[] grantResults) {
+        switch (requestCode) {
+            case REQUEST_CODE_ASK_PERMISSIONS:
+                if (grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+                    android.os.Process.killProcess(android.os.Process.myPid());
+                    startActivity(new Intent(this, this.getClass()));
+                } else {
+                    // Permission Denied
+                    Toast.makeText(this, "your message", Toast.LENGTH_SHORT)
+                            .show();
+                }
+                break;
+            default:
+                super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+        }
+    }
+
+
     @RequiresApi(api = Build.VERSION_CODES.M)
     public void startSearch(View view) {
         if (searchTerm.getText().toString().matches("")){
@@ -76,6 +101,7 @@ public class MainActivity extends AppCompatActivity implements LocationListener 
         else {
         // get the last know location from your location manager.
         if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
+            Toast.makeText(this, "Check your location permission", Toast.LENGTH_SHORT).show();
             return;
         }
         if (player == null){
